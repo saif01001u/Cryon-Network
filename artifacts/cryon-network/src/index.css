@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-card-border: hsl(var(--card-border));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-popover-border: hsl(var(--popover-border));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Orbitron', sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --background: 220 20% 4%;
+  --foreground: 195 100% 95%;
+  --card: 220 20% 7%;
+  --card-foreground: 195 100% 92%;
+  --card-border: 191 100% 40%;
+  --border: 220 20% 15%;
+  --primary: 191 100% 50%;
+  --primary-foreground: 220 20% 4%;
+  --secondary: 220 20% 12%;
+  --secondary-foreground: 195 80% 80%;
+  --muted: 220 20% 10%;
+  --muted-foreground: 220 20% 55%;
+  --accent: 191 100% 50%;
+  --accent-foreground: 220 20% 4%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 220 20% 15%;
+  --ring: 191 100% 50%;
+  --popover: 220 20% 7%;
+  --popover-foreground: 195 100% 92%;
+  --popover-border: 191 100% 30%;
+  --sidebar: 220 20% 5%;
+  --sidebar-foreground: 195 100% 90%;
+  --sidebar-border: 220 20% 12%;
+  --sidebar-primary: 191 100% 50%;
+  --sidebar-primary-foreground: 220 20% 4%;
+  --sidebar-accent: 220 20% 10%;
+  --sidebar-accent-foreground: 195 80% 80%;
+  --sidebar-ring: 191 100% 50%;
+  --chart-1: 191 100% 50%;
+  --chart-2: 210 100% 56%;
+  --chart-3: 280 100% 70%;
+  --chart-4: 160 84% 39%;
+  --chart-5: 30 100% 60%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 220 20% 4%;
+  --foreground: 195 100% 95%;
+  --card: 220 20% 7%;
+  --card-foreground: 195 100% 92%;
+  --card-border: 191 100% 40%;
+  --border: 220 20% 15%;
+  --primary: 191 100% 50%;
+  --primary-foreground: 220 20% 4%;
+  --secondary: 220 20% 12%;
+  --secondary-foreground: 195 80% 80%;
+  --muted: 220 20% 10%;
+  --muted-foreground: 220 20% 55%;
+  --accent: 191 100% 50%;
+  --accent-foreground: 220 20% 4%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 98%;
+  --input: 220 20% 15%;
+  --ring: 191 100% 50%;
+  --popover: 220 20% 7%;
+  --popover-foreground: 195 100% 92%;
+  --popover-border: 191 100% 30%;
+  --sidebar: 220 20% 5%;
+  --sidebar-foreground: 195 100% 90%;
+  --sidebar-border: 220 20% 12%;
+  --sidebar-primary: 191 100% 50%;
+  --sidebar-primary-foreground: 220 20% 4%;
+  --sidebar-accent: 220 20% 10%;
+  --sidebar-accent-foreground: 195 80% 80%;
+  --sidebar-ring: 191 100% 50%;
+  --chart-1: 191 100% 50%;
+  --chart-2: 210 100% 56%;
+  --chart-3: 280 100% 70%;
+  --chart-4: 160 84% 39%;
+  --chart-5: 30 100% 60%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+  }
+  
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3), 0 0 40px rgba(0, 229, 255, 0.1);
+  }
+  
+  .text-neon {
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+  }
+}
+
+@keyframes pulse-dot {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 229, 255, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* Wallet adapter overrides */
+.wallet-adapter-button {
+  font-family: var(--font-display) !important;
+  background-color: transparent !important;
+  border: 1px solid rgba(0, 229, 255, 0.5) !important;
+  color: hsl(var(--primary)) !important;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+  transition: all 0.2s ease !important;
+}
+.wallet-adapter-button:hover {
+  background-color: rgba(0, 229, 255, 0.1) !important;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4), 0 0 40px rgba(0, 229, 255, 0.2);
+}
+.wallet-adapter-dropdown-list {
+  background: rgba(9, 12, 20, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(0, 229, 255, 0.2) !important;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.2) !important;
+}
+.wallet-adapter-dropdown-list-item {
+  color: hsl(var(--foreground)) !important;
+  font-family: var(--font-sans) !important;
+}
+.wallet-adapter-dropdown-list-item:hover {
+  background-color: rgba(0, 229, 255, 0.1) !important;
+}
+.wallet-adapter-modal-wrapper {
+  background: rgba(9, 12, 20, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(0, 229, 255, 0.3) !important;
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.2) !important;
+}
+.wallet-adapter-modal-title {
+  font-family: var(--font-display) !important;
+  color: hsl(var(--primary)) !important;
+  text-shadow: 0 0 10px rgba(0, 229, 255, 0.8);
+}
